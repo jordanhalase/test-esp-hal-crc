@@ -1,0 +1,14 @@
+[package]
+name = "test_esp_hal_crc"
+version = "0.1.0"
+authors = ["Jordan Halase <jordan@halase.me>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+hal = { package = "esp32c3-hal", version = "0.9.0" }
+esp-backtrace = { version = "0.7.0", features = ["esp32c3", "panic-handler", "exception-handler", "print-uart"] }
+esp-println = { version = "0.5.0", features = ["esp32c3", "crlf"] }
+
+[patch.crates-io]
+hal = { git = "https://github.com/jordanhalase/esp-hal.git", branch = "rom_crc", package = "esp32c3-hal" }
